@@ -19,7 +19,7 @@ public class Filewalker {
 				Pattern pattern = Pattern.compile(regex);
 				Matcher matcher = pattern.matcher(f.getName());
 				
-				if (matcher.find()) {
+				while (matcher.find()) {
 					
 					System.out.println("File: "+ f.getAbsoluteFile());
 					
@@ -41,14 +41,14 @@ public class Filewalker {
 		while (true) {
 			System.out.println("Enter your regex: ");
 			regex = console.nextLine();
-			Pattern pattern = Pattern.compile(regex);
+	//		Pattern pattern = Pattern.compile(regex);
 //
-//			System.out.println("Enter directory to search: ");
-//			dir = console.nextLine();
+			System.out.println("Enter directory to search: ");
+			dir = console.nextLine();
 //			Matcher matcher = pattern.matcher(dir);
 	
 			Filewalker filewalker = new Filewalker();
-			filewalker.walk("/home/",regex);
+			filewalker.walk(dir,regex);
 			
 		}
 	
